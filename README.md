@@ -1,4 +1,4 @@
-Visit [Backend Frameworks](https://schitresh.github.io/backend--frameworks) to view notes on:
+Visit [Frameworks](https://schitresh.github.io/frameworks) to view notes on:
 
 -   Rails
 -   React
