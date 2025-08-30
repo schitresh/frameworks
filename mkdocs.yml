@@ -1,6 +1,6 @@
-site_name: Backend Frameworks
-repo_name: schitresh/backend-frameworks
-repo_url: https://github.com/schitresh/backend-frameworks
+site_name: Frameworks
+repo_name: schitresh/frameworks
+repo_url: https://github.com/schitresh/frameworks
 plugins:
     - search
     - awesome-pages
