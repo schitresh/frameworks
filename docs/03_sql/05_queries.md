@@ -1,5 +1,7 @@
 # Queries
+
 ### Select
+
 ```sql
 -- Select all columns
 select * from employees;
@@ -18,6 +20,7 @@ select distinct(city) from employees;
 ```
 
 ### Order and Limit
+
 ```sql
 select * from employees order by date_of_joining;
 select * from employees order by date_of_joining, salary desc;
@@ -34,6 +37,7 @@ select * from employees order by salary limit 5, 10;
 ```
 
 ### Where Conditions
+
 ```sql
 -- Comparison operators
 select * from employees where city is null;
@@ -62,6 +66,7 @@ select * from employees where city in (
 ```
 
 ### Conditionals
+
 ```sql
 -- If
 select
@@ -81,10 +86,11 @@ from employees;
 ```
 
 ### Sets
-- Applied between two 'select' queries where both the queries
-    - Must have the same number of columns
-    - Must have the same data type
-    - Must have the columns of the same order
+
+-   Applied between two 'select' queries where both the queries
+    -   Must have the same number of columns
+    -   Must have the same data type
+    -   Must have the columns of the same order
 
 ```sql
 -- 'Union' returns distinct values
@@ -101,9 +107,10 @@ from employees;
 ```
 
 ### Group
-- Placed after the 'where' clause and before the 'order' & 'having' clause
-- The 'having' clause is used for filtering the grouped data
-- In case of multiple rows, the data from the first row is shown
+
+-   Placed after the 'where' clause and before the 'order' & 'having' clause
+-   The 'having' clause is used for filtering the grouped data
+-   In case of multiple rows, the data from the first row is shown
 
 ```sql
 select
@@ -130,7 +137,8 @@ having sum(salary) > 100000 and num_of_employees < 5;
 ```
 
 ### Aggregators
-- Count, Sum, Avg, Max, Min
+
+-   Count, Sum, Avg, Max, Min
 
 ```sql
 select sum(salary) from employees where department_id = 5;
@@ -139,12 +147,13 @@ select * from employees group by department_id having count(*) > 10;
 ```
 
 ### Joins
-- inner join (or join)
-- left join (or left outer join)
-- right join (or right outer join)
-- full join (or full outer join)
-  - MySQL does not explicitly support a full outer join
-  - Instead, we can achieve it by combining a left join, a right join, a union operator
+
+-   inner join (or join)
+-   left join (or left outer join)
+-   right join (or right outer join)
+-   full join (or full outer join)
+    -   MySQL does not explicitly support a full outer join
+    -   Instead, we can achieve it by combining a left join, a right join, a union operator
 
 ```sql
 select * from employees
@@ -176,8 +185,9 @@ where managers.full_name 'John Wick';
 ```
 
 ## Partition By
-- 'group by' shows only the top rows
-- But 'partition by' shows all the rows along with the partitioned values
+
+-   'group by' shows only the top rows
+-   But 'partition by' shows all the rows along with the partitioned values
 
 ```sql
 -- For each employee, show the average salary of the employee's department
@@ -190,7 +200,8 @@ from employees;
 ```
 
 ## Over
-- Apply function over by ordering rows with or without partition
+
+-   Apply function over by ordering rows with or without partition
 
 ```sql
 select

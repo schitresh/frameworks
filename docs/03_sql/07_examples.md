@@ -1,5 +1,7 @@
 # Examples
+
 ### Project wise count of employees sorted in decreasing order
+
 ```sql
 select project, count(emp_id) emp_count
 from details
@@ -8,6 +10,7 @@ order by emp_count desc;
 ```
 
 ### Duplicates in details
+
 ```sql
 select emp_id from details
 group by emp_id, project, salary
@@ -15,6 +18,7 @@ having count(*) > 1;
 ```
 
 ### Remove duplicates in details
+
 ```sql
 delete from details
 where emp_id in (
@@ -23,6 +27,7 @@ where emp_id in (
 ```
 
 ### Fetch odd rows
+
 ```sql
 select emp_id, project, salary
 from (
@@ -33,11 +38,13 @@ where details_row_number % 2 = 1;
 ```
 
 ### Employees joined in 2016
+
 ```sql
 select * from employees where year(joining_date) = "2016";
 ```
 
 ### Nth highest salary
+
 ```sql
 select salary from employees order by salary desc limit n-1, 1;
 -- or
@@ -48,11 +55,13 @@ limit 1;
 ```
 
 ### Remove underscore from names
+
 ```sql
 update employees set full_name = replace(full_name, '_', ' ')
 ```
 
 ### Get employee salaries along with their department's average salary, ordered by salary within department
+
 ```sql
 select
   full_name, salary,

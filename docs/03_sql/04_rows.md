@@ -1,5 +1,7 @@
 # Rows
+
 ### Insert
+
 ```sql
 -- Insert all columns
 insert into employees
@@ -18,6 +20,7 @@ insert into employees (
 ```
 
 ### Update
+
 ```sql
 -- Update all rows
 update employees
@@ -30,6 +33,7 @@ where name = 'John Wick';
 ```
 
 ### Delete
+
 ```sql
 -- Drop table
 drop table employees;

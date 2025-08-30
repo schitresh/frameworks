@@ -1,70 +1,72 @@
 # Components
-- React is a Javascript library for rendering user interfaces (UI)
-  - UI is built from small units like buttons, text, images
-  - React lets you combine them into reusable, nestable components
-- React applications are built from isolated pieces of UI called components
-  - Traditionally, first content was marked up and then interaction was added using js
-  - React puts interactivity first while still using the same technology
-- React component is a javascript function that you can sprinkle with markup
-  - These are UI elements that can be reused
-  - They use the same html tags under the hood
-  - Can be as small as button or as large as an entire page
-- Defining components
-  - Their names must start with a capital letter
-  - Should return jsx which should be rendered on the screen
-    - If nothing should be rendered, it should return null
-  - Multiple components can be defined in the same file
-  - Components can be nested & rendered but their definitions cannot be nested
+
+-   React is a Javascript library for rendering user interfaces (UI)
+    -   UI is built from small units like buttons, text, images
+    -   React lets you combine them into reusable, nestable components
+-   React applications are built from isolated pieces of UI called components
+    -   Traditionally, first content was marked up and then interaction was added using js
+    -   React puts interactivity first while still using the same technology
+-   React component is a javascript function that you can sprinkle with markup
+    -   These are UI elements that can be reused
+    -   They use the same html tags under the hood
+    -   Can be as small as button or as large as an entire page
+-   Defining components
+    -   Their names must start with a capital letter
+    -   Should return jsx which should be rendered on the screen
+        -   If nothing should be rendered, it should return null
+    -   Multiple components can be defined in the same file
+    -   Components can be nested & rendered but their definitions cannot be nested
 
 ```js
-const Profile = () => (
-  <img src='image_url'/>
-);
+const Profile = () => <img src="image_url" />;
 
 const Gallery = () => (
-  <div>
-    <Profile/>
-    <Profile/>
-  </div>
+    <div>
+        <Profile />
+        <Profile />
+    </div>
 );
 ```
 
 ## JSX
-- Syntax extension that is written like html
-- But actually it is javascript under the hood
-- Lets you embed markup inside javascript
-- Variables or logical statements are enclosed within `{}`
+
+-   Syntax extension that is written like html
+-   But actually it is javascript under the hood
+-   Lets you embed markup inside javascript
+-   Variables or logical statements are enclosed within `{}`
 
 ### JSX Rules
-- Return a single root element
-  - If there are multiple elements, wrap them with a single parent tag
-  - If you don't want to use an extra element like `div`, fragment can be used
-  - Fragment is an empty tag & lets you group things `<React.Fragment></React.Fragment>`
-- Close all the tags
-  - Self-closing tags like `img` work in html: `<img src=''>`
-  - But they should be closed in jsx: `<img src=''/>`
-  - Wrapping tags like `li` should also have a closing tag: `<li>text</li>`
-- camelCase most of the things
-  - Attributes cannot contain dashes like `margin-left`: `<img style={{ marginLeft: 2 }}/>`
-  - Reserved words like `class` cannot be used: `<img className={classes.image}/>` -->
+
+-   Return a single root element
+    -   If there are multiple elements, wrap them with a single parent tag
+    -   If you don't want to use an extra element like `div`, fragment can be used
+    -   Fragment is an empty tag & lets you group things `<React.Fragment></React.Fragment>`
+-   Close all the tags
+    -   Self-closing tags like `img` work in html: `<img src=''>`
+    -   But they should be closed in jsx: `<img src=''/>`
+    -   Wrapping tags like `li` should also have a closing tag: `<li>text</li>`
+-   camelCase most of the things
+    -   Attributes cannot contain dashes like `margin-left`: `<img style={{ marginLeft: 2 }}/>`
+    -   Reserved words like `class` cannot be used: `<img className={classes.image}/>` -->
 
 ```js
 const TodoList = () => {
-  const person = { name: 'Name', theme: {} };
+    const person = { name: "Name", theme: {} };
 
-  return (
-    <div style={person.theme}>
-      <h1>{person.name}'s Todos</h1>
-      <img className='avatar' src='image_url'/>
-      <ul>
-        <li>Task 1</li>
-        <li>Task 2</li>
-      </ul>
-    </div>
-  );
-}
+    return (
+        <div style={person.theme}>
+            <h1>{person.name}'s Todos</h1>
+            <img className="avatar" src="image_url" />
+            <ul>
+                <li>Task 1</li>
+                <li>Task 2</li>
+            </ul>
+        </div>
+    );
+};
 export default TodoList;
 ```
+
 <!--
 ## Props
 - React components use props to communicate with each other

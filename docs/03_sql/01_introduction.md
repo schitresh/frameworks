@@ -1,20 +1,23 @@
 # Introduction
-- SQL (Structured Query Language)
-    - Standard database language used to access and manipulate data
-- Uses
-    - Data definition
-    - Data retrieval
-    - Data manipulation
-    - Access control
-    - Data sharing
+
+-   SQL (Structured Query Language)
+    -   Standard database language used to access and manipulate data
+-   Uses
+    -   Data definition
+    -   Data retrieval
+    -   Data manipulation
+    -   Access control
+    -   Data sharing
 
 ## Operators
-- Arithmetic Operators: `+`, `-`, `/`, `*`, `%`
-- Comparison Operators: `=`, `<>` or `!=`, `<`, `>`, `<=`, `=>`
-- Logical Operators: `and`, `or`, `not`
-- Special Operators: `all`, `any`, `some`, `exists`, `between`, `in`, `distinct`, `unique`
+
+-   Arithmetic Operators: `+`, `-`, `/`, `*`, `%`
+-   Comparison Operators: `=`, `<>` or `!=`, `<`, `>`, `<=`, `=>`
+-   Logical Operators: `and`, `or`, `not`
+-   Special Operators: `all`, `any`, `some`, `exists`, `between`, `in`, `distinct`, `unique`
 
 ## User
+
 ```sql
 -- Change password
 alter user 'root'@'localhost'
@@ -23,6 +26,7 @@ by 'new_password';
 ```
 
 ## Database
+
 ```sql
 -- List all databases
 show databases;

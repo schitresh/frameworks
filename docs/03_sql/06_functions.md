@@ -1,5 +1,7 @@
 # Queries
+
 ## Date and Time
+
 ```sql
 now() -- Current Date and Time
 curdate() -- Current Date
@@ -15,6 +17,7 @@ extract(year from date)
 ```
 
 ## String
+
 ```sql
 length(full_name)
 concat(first_name, ' ', last_name)
@@ -26,6 +29,7 @@ replace(full_name, '_', ' ')
 ```
 
 ## Numeric
+
 ```sql
 abs(-100) -- Absolute
 ceil(10.25)
@@ -38,10 +42,11 @@ power(10, 2)
 ```
 
 ## JSON
-- '$' references entire object
-- '$.details' references a particular key 'details'
-- '$[4]' references the fourth object in an array
-- '$.details[4].name'
+
+-   '$' references entire object
+-   '$.details' references a particular key 'details'
+-   '$[4]' references the fourth object in an array
+-   '$.details[4].name'
 
 ```sql
 json_exists(data, path) -- Returns 1 if the element exists, 0 if not
@@ -57,12 +62,13 @@ json_table(data, path columns (name varchar(50) path '$.name')) details;
 ```
 
 ## SQL Injection
-- Hazardous security vulnerability that uses the interactions between web applications and their databases
-- Technique used to extract user data by injecting web page inputs as statements through SQL commands
-- Solutions
-  - Avoid string concatenations or string injections for queries
-  - Use parameterized queries provided by the backend framework
-  - Sanitize and escape queries
+
+-   Hazardous security vulnerability that uses the interactions between web applications and their databases
+-   Technique used to extract user data by injecting web page inputs as statements through SQL commands
+-   Solutions
+    -   Avoid string concatenations or string injections for queries
+    -   Use parameterized queries provided by the backend framework
+    -   Sanitize and escape queries
 
 ```rb
 # Example 1

@@ -1,6 +1,7 @@
 # Schema
 
 ### List Tables & Columns
+
 ```sql
 -- List all tables
 show tables;
@@ -11,6 +12,7 @@ show columns from table_name;
 ```
 
 ### Create Table
+
 ```sql
 create table table_name (
     column_name data_type constraint,
@@ -46,6 +48,7 @@ select * into new_employees from employees;
 ```
 
 ### Alter Table
+
 ```sql
 -- Rename table
 alter table employees rename to new_employees;
@@ -64,6 +67,7 @@ alter table employees rename column salary to salary_per_month;
 ```
 
 ### Constraints
+
 ```sql
 -- List all constraints of a table
 select *
@@ -76,6 +80,7 @@ alter table employees drop column manager_id;
 ```
 
 #### Not Null
+
 ```sql
 create table employees (
     date_of_joining date not null
@@ -86,6 +91,7 @@ modify date_of_joining date not null;
 ```
 
 #### Unique
+
 ```sql
 create table employees (
     employee_id int not null unique
@@ -95,6 +101,7 @@ alter table employees add unique (employee_id);
 ```
 
 #### Primary Key
+
 ```sql
 create table employees (
     employee_id int not null primary key
@@ -109,6 +116,7 @@ alter table employees add primary key (employee_id);
 ```
 
 #### Foreign Key
+
 ```sql
 create table employees (
     address_id int references addresses(address_id)
@@ -121,7 +129,9 @@ create table employees (
 alter table employees
 add foreign key (employee_id) references addresses(address_id);
 ```
+
 #### Default
+
 ```sql
 create table employees (
     city varchar(255) default 'New York'
@@ -132,7 +142,8 @@ alter city drop default;
 ```
 
 #### Check
-- Imposes conditions on what type of data can be inserted
+
+-   Imposes conditions on what type of data can be inserted
 
 ```sql
 create table employees (
@@ -150,15 +161,16 @@ drop check joined_after;
 ```
 
 ### Indexes
-- Should be used when the column
-    - Contains a wide range of values
-    - Does not contain a large number of null values
-    - Is used frequently in queries
-- Should be avoided when
-    - The table is small
-    - The columns are not often used as conditions in queries
-    - The columns are updated frequently
-- Primary keys and foreign keys should be indexed
+
+-   Should be used when the column
+    -   Contains a wide range of values
+    -   Does not contain a large number of null values
+    -   Is used frequently in queries
+-   Should be avoided when
+    -   The table is small
+    -   The columns are not often used as conditions in queries
+    -   The columns are updated frequently
+-   Primary keys and foreign keys should be indexed
 
 ```sql
 -- Create index
@@ -179,7 +191,8 @@ on employees rebuild;
 ```
 
 ### Views
-- Virtual tables created by selecting fields from one or more tables
+
+-   Virtual tables created by selecting fields from one or more tables
 
 ```sql
 create view salaries_for_employees_joined_after_2023 as (
@@ -201,6 +214,7 @@ create or replace view view_name as (query);
 ```
 
 ### Temporary Table
+
 ```sql
 -- Local temporary table
 -- Available only for the current session
